@@ -1,0 +1,36 @@
+<h1>list of Users</h1>
+<div class = 'users'>
+    <% @users.each do |user| %>
+
+    <% if user.profile.attached? %>
+
+  <p>
+    <strong>Profile:</strong>
+    <br>
+    <%= image_tag user.profile, size:'100x50', style:"border-radius:75%" %>
+  </p>
+<% end %>
+    <strong>Name</strong><%= user.name %> <br>
+    <strong>Residence:</strong><%= user.residence %> <br>
+    <strong>Username</strong><%= user.username %> <br>
+    <strong>District</strong><%= user.district %> <br>
+    <strong>Posts</strong>
+    <div class='profileposts'>
+    <% user.posts.each  do |post| %>
+    <%= post.content %> <br>
+    <% if post.image.attached? %>
+
+  <p>
+    <strong>Photo:</strong>
+    <br>
+    <%= image_tag post.image, size:'150x100' %>
+  </p>
+<% end %>
+
+    <% end %>
+    </div>
+    <hr>
+   
+    <% end %> 
+</div>
+
