@@ -1,4 +1,6 @@
+
 <%= form_with(model: post, local: true) do |form| %>
+<div class='postform' >
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -23,14 +25,15 @@
   <div class='field'>
   <%=form.label :Image_upload %>
   <%=form.file_field :image %>
-  </div>
-
-   <div class='field'>
-  <%=form.label :Video_upload %>
+   <%=form.label :Video_upload %>
   <%=form.file_field :video %>
   </div>
+
+ 
 
   <div class="actions">
     <%= form.submit 'upload' %>
   </div>
+  </div>
 <% end %>
+

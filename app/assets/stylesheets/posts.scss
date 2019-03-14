@@ -1,3 +1,74 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+nav
+{
+    width: 100%; background-color:#0c4168; height: 50px; color: white;
+}
+
+
+.login 
+{
+    background-color: greenyellow; height: 500px; width: 400px; text-align: center;
+    display: block;
+}
+
+.shared 
+{
+    float: left;
+}
+.innerlogin
+{
+    display: block;
+}
+p 
+{
+    width: 100%; margin: 15px;
+}
+h2 
+   {
+       margin-bottom: 10px;
+   }
+.post
+{
+    width: 500px; text-align: center;
+}
+.indexpost {
+     background-color: aqua; width: 600px; 
+    
+}
+.username {
+    margin-bottom:  5px;
+}
+ li {
+    display: block;
+}
+body {
+    text-align: center;
+}
+
+.postform {
+    display: inline;
+    background-color: blue;
+
+}
+.member {
+    background-color: blueviolet;
+}
+.search {
+    float: left; margin-top: 15px; width: 25%; 
+}
+#input {
+    width: 75%;
+}
+nav a {
+    color:#fff; padding: 20px; margin:-5px;
+    text-decoration: none;
+    float: right;
+}
+.pro {
+    float: right; margin: -10px;
+}
+
+
+

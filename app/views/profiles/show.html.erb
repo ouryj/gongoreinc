@@ -1,0 +1,42 @@
+<div class='userprofile'>
+<% if @user.profile.attached? %>
+<%= image_tag @user.profile, size:'300x300', style:'border-radius:10%'%>
+<% end %>
+<div class='innerdivprofile'>
+   Name :<strong><%= @user.name %></strong> 
+</div>
+<div class='innerdivprofile'>
+ Resides in:   <strong><%= @user.residence %></strong> 
+</div>
+<div class='innerdivprofile'>
+  District/Village: <strong><%= @user.district %></strong> <br>
+</div>
+<div class='innerdivprofile'>
+  Gender: <strong><%= @user.gender %></strong> <br>
+</div>
+<div class='userprofileposts'>
+<h3>Member Posts</h3>
+    <% @user.posts.each  do |post| %>
+    
+    <strong>About</strong><%=post.title%> <br>
+    <strong>Post Content:</strong><%= post.content %> <br>
+    <strong>Posted at:</strong><%= time_ago_in_words(post.created_at) %>
+    <div>
+    <% if post.image.attached? %>
+     <h3>Member photos Posts</h3>
+    <%= image_tag post.image, size:'450x350' %> <br>
+    <strong>Posted at:</strong><%= time_ago_in_words(post.created_at) %>
+<% end %>
+</div>
+<div> 
+    <% if post.image.attached? %>
+    <h3>Member videos posts</h3>
+    <%= video_tag(url_for(post.video), size:'450x350', controls:'') %>  <br>
+    <strong>Posted at:</strong><%= time_ago_in_words(post.created_at) %>
+<% end %>
+   
+</div>
+
+    <% end %>
+</div>
+</div>

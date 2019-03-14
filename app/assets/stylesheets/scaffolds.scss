@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color:gainsboro;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -7,7 +7,7 @@ body {
   line-height: 18px;
 }
 
-p, ol, ul, td {
+ ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -20,15 +20,14 @@ pre {
 }
 
 a {
-  color: #000;
+ text-decoration: none;
+  
 
-  &:visited {
-    color: #666;
-  }
+
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color:green;
+    
   }
 }
 
@@ -81,4 +80,10 @@ div {
 
 label {
   display: block;
+}
+p {
+  width: 100%; height: 20px;
+}
+.profile {
+  color: black; float: left;
 }

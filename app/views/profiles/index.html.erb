@@ -1,36 +1,32 @@
-<h1>list of Users</h1>
+<h1>Members</h1>
 <div class = 'users'>
+<ul>
     <% @users.each do |user| %>
 
     <% if user.profile.attached? %>
 
-  <p>
-    <strong>Profile:</strong>
-    <br>
-    <%= image_tag user.profile, size:'100x50', style:"border-radius:75%" %>
-  </p>
+
+    <li> 
+    <%= link_to image_tag(user.profile,size:'50x50', style:"border-radius:75%", class:'profile'),profile_path(user), class:'profile' %><strong>
 <% end %>
-    <strong>Name</strong><%= user.name %> <br>
-    <strong>Residence:</strong><%= user.residence %> <br>
-    <strong>Username</strong><%= user.username %> <br>
-    <strong>District</strong><%= user.district %> <br>
-    <strong>Posts</strong>
+<%= link_to  user.name ,profile_path(user),class:'profile' %> </strong> </li> 
+    
+ 
+   
     <div class='profileposts'>
-    <% user.posts.each  do |post| %>
-    <%= post.content %> <br>
-    <% if post.image.attached? %>
 
-  <p>
-    <strong>Photo:</strong>
-    <br>
-    <%= image_tag post.image, size:'150x100' %>
-  </p>
-<% end %>
-
-    <% end %>
     </div>
-    <hr>
+   
    
     <% end %> 
+    </ul>
+</div>
+
+<div class= 'member'>
+<% @members.each do |m| %>
+<%= m.name %>
+<% end %>
+ 
+ 
 </div>
 

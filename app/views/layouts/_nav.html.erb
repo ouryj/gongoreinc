@@ -1,4 +1,20 @@
 <nav>
-    <%= link_to 'members', profiles_path, class:'nav' %>
+<%= form_tag(profiles_path,class:'search', method: :get) do %>
+<%= text_field_tag(:search, params[:search],placeholder:'search for members',id:'input') %>
+<%= submit_tag "search",class:'searchbutton', name: nil %>
+<% end %>
+
+  <% if user_signed_in? %>
+   <div class='pro'>
+   <%= link_to image_tag(current_user.profile, size:'40x40', style:"border-radius:75%"), profile_path(current_user) %>
+  </div>
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> 
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
+ <%= link_to 'members', profiles_path, class:'nav' %>
     <%= link_to 'home', posts_path %>
+
 </nav>
