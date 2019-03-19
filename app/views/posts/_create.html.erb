@@ -1,0 +1,17 @@
+<div class='postform'>
+
+    <%= form_with(model: @post, class:'form') do |f| %>
+   
+    <%= f.text_field :title,placeholder:'what is your post about?',class:'input',id:'title' %> <br>
+    <%= f.text_area :content,rows:3, placeholder:'share your post here',class:'input',id:'content' %> <br>
+
+    <p>Photo<%= f.file_field :image, placeholder:'photo', class:'input' %></p>
+   <p>Video<%= f.file_field :video,class:'input' %></p> 
+    <%= f.submit 'upload', id:'upload' %>
+    <%end%>
+
+
+
+
+
+</div>

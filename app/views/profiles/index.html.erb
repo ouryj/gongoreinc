@@ -1,32 +1,19 @@
 <h1>Members</h1>
 <div class = 'users'>
-<ul>
+<div class='profile'>
     <% @users.each do |user| %>
 
     <% if user.profile.attached? %>
-
-
-    <li> 
-    <%= link_to image_tag(user.profile,size:'50x50', style:"border-radius:75%", class:'profile'),profile_path(user), class:'profile' %><strong>
-<% end %>
-<%= link_to  user.name ,profile_path(user),class:'profile' %> </strong> </li> 
     
- 
-   
-    <div class='profileposts'>
-
-    </div>
-   
-   
-    <% end %> 
-    </ul>
-</div>
-
-<div class= 'member'>
-<% @members.each do |m| %>
-<%= m.name %>
+<%= link_to image_tag(user.profile,size:'50x50', style:"border-radius:75%"),profile_path(user) %><strong>
 <% end %>
- 
- 
+<%= link_to  user.name ,profile_path(user), class:'name'%> </strong>  
+ <hr>   
+ <% end %> 
+ </div>
+
+    
 </div>
+
+
 

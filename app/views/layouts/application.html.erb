@@ -5,8 +5,12 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= javascript_include_tag 'jquery' %>
+ 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+   
   </head>
 
   <body>
@@ -14,7 +18,11 @@
 
 
 
-   <%= render 'layouts/notice' %>
+  <%= render 'layouts/notice' %>
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
     <%= yield %>
   </body>
 </html>

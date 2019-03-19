@@ -66,4 +66,5 @@ gem 'country_select', '~> 4.0'
 gem 'aws-sdk', '~> 3'
 #devise for authentication
 gem 'devise'
+gem 'jquery-rails'
 

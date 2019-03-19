@@ -1,5 +1,5 @@
 <nav>
-<%= form_tag(profiles_path,class:'search', method: :get) do %>
+<%= form_tag(finds_path,class:'search', method: :get) do %>
 <%= text_field_tag(:search, params[:search],placeholder:'search for members',id:'input') %>
 <%= submit_tag "search",class:'searchbutton', name: nil %>
 <% end %>

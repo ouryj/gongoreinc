@@ -13,6 +13,7 @@
 </div>
 <div class='innerdivprofile'>
   Gender: <strong><%= @user.gender %></strong> <br>
+  Birthday: <strong><%=@user.age.strftime("%m-%d-%Y") %></strong>
 </div>
 <div class='userprofileposts'>
 <h3>Member Posts</h3>
@@ -29,7 +30,7 @@
 <% end %>
 </div>
 <div> 
-    <% if post.image.attached? %>
+    <% if post.video.attached? %>
     <h3>Member videos posts</h3>
     <%= video_tag(url_for(post.video), size:'450x350', controls:'') %>  <br>
     <strong>Posted at:</strong><%= time_ago_in_words(post.created_at) %>

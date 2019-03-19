@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class= 'member'>
+<h3>People you may know</h3>
+<% @members.each do |m| %>
+<div class='innermember'>
+
+<%= link_to image_tag(m.profile, size:'90x90', style:'border-radius: 50%', class:'findimg'),profile_path(m) %>
+<p id='findname'><%= link_to m.name,profile_path(m) %></p>
+<p><em><%=m.district%></em></p>
+</div>
+
+<% end %>
+ 
+ 
+</div>
+

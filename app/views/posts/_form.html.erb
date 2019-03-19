@@ -1,6 +1,6 @@
-
-<%= form_with(model: post, local: true) do |form| %>
 <div class='postform' >
+<%= form_with(model: post, local: true, class:'form') do |form| %>
+
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -34,6 +34,7 @@
   <div class="actions">
     <%= form.submit 'upload' %>
   </div>
-  </div>
+  
 <% end %>
+</div>
 

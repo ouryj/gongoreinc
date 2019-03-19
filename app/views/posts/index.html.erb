@@ -3,36 +3,47 @@
 <h1>Posts</h1>
 
 
-<%= render 'form', post: @post %>
+<%= render 'create'%>
 
 
-
+ <div class='indexpost'>
  
     <% @posts.each do |post| %>
-      
-         <div class='indexpost'>
+<div class="individual">    
 <div class='headpost'>
          
-         <%= image_tag post.user.profile, size:'40x40', style:'border-radius:50%' %> 
-         <strong class='username'><%= post.user.name %></strong> 
+         <%= link_to image_tag(post.user.profile, size:'40x40', style:'border-radius:50%'), profile_path(post.user) %> 
+         <strong class='username'><%= link_to post.user.name, profile_path(post.user)%></strong> 
 </div>
         <%= post.title %> <br>
-        <%= post.content %>
-        <% if post.id != current_user.id %>
+        <%= post.content %> <br>
+        <% if post.image.attached? %>
+        <%= image_tag post.image, size:'350x300',class:'photo' %> <br>
+        <%end%>
+        <% if post.user_id != current_user.id %>
         <%= link_to 'Show', post %>
         <% else %>
-        <%= link_to 'Show', post %>
+        <button id="btn"><%= link_to 'Show', post %></button>
         <%= link_to 'Edit', edit_post_path(post) %>
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
       
       <%end %>
+      </div>
     <% end %>
+    
+    
+
+
     </div>
   
 
 
 
 
-<%= link_to 'New Post', new_post_path %>
+
+
+
+
+<script src="assets/javascripts/posts.js"></script>
 
 

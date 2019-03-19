@@ -10,7 +10,15 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery
+
+let btn = document.querySelector("#btn")
+btn.addEventListener("click",(event){
+    event.preventDefault();
+    alert("what are you doing");
+});

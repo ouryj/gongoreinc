@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 nav
 {
-    width: 100%; background-color:#0c4168; height: 50px; color: white;
+    width: inherit; background-color:#0c4168; height: 50px; color: white;
 }
 
 
@@ -33,10 +33,11 @@ h2
 {
     width: 500px; text-align: center;
 }
-.indexpost {
-     background-color: aqua; width: 600px; 
+// .indexpost {
+//      background-color: gainsboro; width: 600px; 
+//      margin-left: 355px; padding: 20px; margin-top:  10px;
     
-}
+// }
 .username {
     margin-bottom:  5px;
 }
@@ -53,7 +54,8 @@ body {
 
 }
 .member {
-    background-color: blueviolet;
+    background-color: ghostwhite; width: 450px;
+    height: 300px; margin-top: 20px; display: inline-block;
 }
 .search {
     float: left; margin-top: 15px; width: 25%; 
@@ -69,6 +71,23 @@ nav a {
 .pro {
     float: right; margin: -10px;
 }
+.postform {
+    width: 600px; background-color:ghostwhite;
+    display: inline-block; height: 250px; padding: 20px; 
+}
+.input {
+    padding: 5px; margin: 5px; flex-shrink: abs($number: 3)
+}
+#title, #content {
+    width: 90%;
+    font-weight: bold;
+}
+.individual {
+    width: 600px; background-color: ghostwhite;
+    margin-top: 10px; margin-left: 355.5px; padding: 20px;
+}
+
+
 
 
 
